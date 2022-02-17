@@ -28,13 +28,19 @@ public class Rectangle {
 
     public void setWidth(int width) {
         if(width < 1)
+        {
+            this.width = 1;
             return;
+        }
         this.width = width;
     }
 
     public void setHeight(int height) {
         if(height < 1)
+        {
+            this.height = 1;
             return;
+        }
         this.height = height;
     }
 
