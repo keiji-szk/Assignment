@@ -12,9 +12,21 @@ public class GameExecute {
     static public String cityFilePath = "./src/week2/MiniProject1/cities.txt";
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        do {
+            PlayGame();
+            System.out.print("\nPress y to continue: ");
+            String will = scanner.next();
+            if (will.compareTo("y") != 0) {
+                break;
+            }
+        } while (true);
+    }
+
+    public static void PlayGame() {
         GuessManager mgr = GameExecute.InitializeGameManager();
 
-        // For Debug
+        // This line should be commented out when released.
         System.out.println("DEBUG ANSWER: " + mgr.getAnswer());
 
         // Game Start
@@ -46,6 +58,7 @@ public class GameExecute {
         System.out.println("You loss");
         System.out.println(String.format("The correct word was '%s'!", mgr.getAnswer()));
     }
+
 
     public static GuessManager InitializeGameManager() {
         List<String> cityList = GameExecute.ReadCityList();

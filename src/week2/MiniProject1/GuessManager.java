@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class GuessManager {
     private static final Character HIDE_CHARACTER = '_';
+    private static final Character SPACE_CHARACTER = ' ';
     private static final int LIMIT_COUNT_GUESS = 10;
 
     private final String answer;
@@ -41,16 +42,20 @@ public class GuessManager {
     }
 
     public String getDisplayString() {
-        String ret = "";
+        StringBuilder ret = new StringBuilder();
         for (int i = 0; i < answer.length(); ++i) {
-            final Character ch = Character.toLowerCase(answer.charAt(i));
+            final char ch = Character.toLowerCase(answer.charAt(i));
+            if (ch == SPACE_CHARACTER) {
+                ret.append(SPACE_CHARACTER);
+                continue;
+            }
             if (letterCorrect.contains(ch)) {
-                ret += ch;
+                ret.append(answer.charAt(i));
             } else {
-                ret += HIDE_CHARACTER;
+                ret.append(HIDE_CHARACTER);
             }
         }
-        return ret;
+        return ret.toString();
     }
 
     public void guessLetter(String guess) {
