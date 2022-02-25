@@ -27,7 +27,7 @@ public class GameExecute {
         GuessManager mgr = GameExecute.InitializeGameManager();
 
         // This line should be commented out when released.
-        System.out.println("DEBUG ANSWER: " + mgr.getAnswer());
+        // System.out.println("DEBUG ANSWER: " + mgr.getAnswer());
 
         // Game Start
         System.out.println("Here's the question.");
