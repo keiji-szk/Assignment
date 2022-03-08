@@ -80,7 +80,7 @@ public class Controller {
                 System.out.println("You must enter Mobile");
                 continue;
             }
-            output.setName(userInputMobile);
+            output.setMobile(userInputMobile);
             break;
         }
 
