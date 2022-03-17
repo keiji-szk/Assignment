@@ -6,14 +6,6 @@ import java.util.Arrays;
 
 public class Driver {
     public static void main(String[] args) {
-//        MyLinkedList<Integer> li = new MyLinkedList<>();
-//        li.addLast(1);
-//        li.addLast(2);
-//        li.addLast(3);
-//        System.out.println(li);
-//        li.reverse();
-//        System.out.println(li);
-
         MyArrayList<String> list1 = new MyArrayList<String>();
 
         /**
@@ -60,5 +52,31 @@ public class Driver {
          */
         System.out.println("\nTest indexOf()");
         System.out.println(list1.indexOf("444"));
+
+
+        MyLinkedList<Integer> lnkList = new MyLinkedList<>();
+        lnkList.addLast(1);
+        lnkList.addLast(1);
+        lnkList.addLast(3);
+        lnkList.addLast(2);
+        lnkList.addLast(2);
+        lnkList.addLast(3);
+        lnkList.addLast(4);
+        lnkList.addLast(4);
+
+        System.out.println("\nTest removeLast()");
+        lnkList.removeLast();
+        System.out.println(lnkList);
+
+        System.out.println("\nTest removeIndexOf()");
+        lnkList.remove(1);
+        System.out.println(lnkList);
+
+        System.out.println("\nTest lastIndexOf()");
+        System.out.println(lnkList.lastIndexOf(3));
+
+        System.out.println("\nTest reverse()");
+        lnkList.reverse();
+        System.out.println(lnkList);
     }
 }
